@@ -1,7 +1,8 @@
-## vue3-right-click-menu
-vue3右键菜单组件
+<p align="center">
+  <img src="./assets/kv.png"/>
+</p>
+  vue3右键菜单组件
 
-## demo
 ![demo](./assets/demo.gif)
 
 ## Install
