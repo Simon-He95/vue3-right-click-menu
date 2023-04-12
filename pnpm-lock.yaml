@@ -21,7 +21,7 @@ importers:
       unocss: ^0.51.2
       vite: ^4.0.0
       vitest: ^0.13.1
-      vue3-right-click-menu: workspace:^0.0.2
+      vue3-right-click-menu: workspace:^0.0.3
     dependencies:
       '@vueuse/core': 9.7.0
     devDependencies:
