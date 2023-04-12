@@ -4,10 +4,9 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Aaa: typeof import('./src/components/aaa.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
-    RightClick: typeof import('./src/components/rightClick.vue')['default']
+    RightClick: typeof import('./src/components/RightClick.vue')['default']
   }
 }
 

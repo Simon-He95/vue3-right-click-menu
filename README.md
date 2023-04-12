@@ -12,7 +12,7 @@ npm i vue3-right-click-menu
 ## Usage
 ```
 // 引入样式
-import 'vue3-right-click-menu/index.css'
+import 'vue3-right-click-menu/style.css'
 // 注册组件
 import { RightClick } from 'vue3-right-click-menu'
 app.component('vue-right-click', RightClick)

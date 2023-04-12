@@ -5,7 +5,7 @@ import App from './App.vue'
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
-import '../../dist/index.css'
+import 'vue3-right-click-menu/style.css'
 
 const app = createApp(App)
 const router = createRouter({

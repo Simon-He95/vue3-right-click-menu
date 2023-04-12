@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RightClick } from '../../../dist'
+import { RightClick } from 'vue3-right-click-menu'
 const menu = [
   { label: '新增', name: 'simon' },
   { label: '编辑', name: 'simon' },
