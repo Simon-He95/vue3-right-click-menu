@@ -1,0 +1,31 @@
+[data-v-right-click].container{
+  width: fit-content;
+}
+[data-v-right-click].context-menu {
+  position: fixed;
+  background: #eee;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0, 0, 0, 0.2);
+  min-width: 100px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #1d1d1f;
+  line-height: 1.8;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+[data-v-right-click] .menu-list {
+  padding: 5px;
+}
+
+[data-v-right-click] .menu-item {
+  padding: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+[data-v-right-click] .menu-item:hover {
+  background: #3477d9;
+  color: #fff;
+}
