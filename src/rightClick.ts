@@ -1,7 +1,8 @@
-import type { DefineComponent, PropType } from 'vue'
-import { type Ref, Teleport, Transition, computed, defineComponent, h, ref } from 'vue'
-import { useContextMenu } from './contextMenu'
+import type { DefineComponent, PropType, Ref } from 'vue'
+import { Teleport, Transition, computed, defineComponent, h, nextTick, ref, watch } from 'vue'
 import type { Props } from './types'
+import { useContextMenu } from './contextMenu'
+import useViewport from './useViewport'
 
 export const RightClick = defineComponent({
   name: 'RightClick',
@@ -14,15 +15,39 @@ export const RightClick = defineComponent({
   emits: ['select'],
   setup(props, { emit, slots }) {
     const containerRef: Ref<HTMLElement | undefined> = ref()
+    const menuRef: Ref<HTMLElement | undefined> = ref()
     const { x, y, showMenu } = useContextMenu(containerRef)
+    const _w = ref(0)
+    const _h = ref(0)
+    const { vw, vh } = useViewport()
+
+    watch(() => showMenu.value, async (v) => {
+      if (v) {
+        await nextTick()
+        const menuEl = menuRef.value
+        if (!menuEl)
+          return
+        _w.value = menuEl.clientWidth
+        _h.value = menuEl.clientHeight
+      }
+    })
     const handleClick = (item: Record<string, string>) => {
       showMenu.value = false
       emit('select', item)
     }
-    const styleComputed = computed(() => ({
-      left: `${x.value}px`,
-      top: `${y.value}px`,
-    }))
+
+    const styleComputed = computed(() => {
+      let posX = x.value
+      let posY = y.value
+      if (x.value > vw.value - _w.value)
+        posX -= _w.value
+      if (y.value > vh.value - _h.value)
+        posY -= y.value - vh.value + _h.value
+      return {
+        left: `${posX}px`,
+        top: `${posY}px`,
+      }
+    })
 
     return () => h('div', {
       'ref': containerRef,
@@ -60,6 +85,7 @@ export const RightClick = defineComponent({
           },
           h('div', {
             class: 'menu-list',
+            ref: menuRef,
           }, props.menu.map(item => h('div', {
             key: item.label,
             class: 'menu-item',

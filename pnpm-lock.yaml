@@ -21,7 +21,7 @@ importers:
       unocss: ^0.51.2
       vite: ^4.0.0
       vitest: ^0.13.1
-      vue3-right-click-menu: workspace:^0.0.3
+      vue3-right-click-menu: ^0.0.3
     dependencies:
       '@vueuse/core': 9.7.0
     devDependencies:
@@ -41,7 +41,7 @@ importers:
       unocss: 0.51.2_vite@4.0.1
       vite: 4.0.1_@types+node@18.11.16
       vitest: 0.13.1
-      vue3-right-click-menu: 'link:'
+      vue3-right-click-menu: 0.0.3
 
   playground:
     specifiers:
@@ -1617,7 +1617,6 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
-    dev: false
 
   /@vueuse/core/9.7.0_vue@3.2.36:
     resolution: {integrity: sha512-/AGY/t7jJPxCyRoVTygNKoroTiCvRaaZIW+yeSlBCnI7QRpQ9cvXNTdNaSl3GvSyFbn83+XwZwEZvI1OpQfeGw==}
@@ -1640,7 +1639,6 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
-    dev: false
 
   /@vueuse/shared/9.7.0_vue@3.2.36:
     resolution: {integrity: sha512-pwmt1y3TJ2s5KqWmkv9ZKEV59GwuZQZk8XLiU+hGswz0jej318ozbea9E4A/A50ksyM26swSFr7sZ9llNPsZHg==}
@@ -5916,7 +5914,6 @@ packages:
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
-    dev: false
 
   /vue-demi/0.13.11_vue@3.2.36:
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
@@ -6003,6 +6000,17 @@ packages:
       '@vue/runtime-dom': 3.2.36
       '@vue/server-renderer': 3.2.36_vue@3.2.36
       '@vue/shared': 3.2.36
+
+  /vue3-right-click-menu/0.0.3:
+    resolution: {integrity: sha512-Dh5XogehXl4S93iK6uP+osyfQJirm2/Q46J/YvZNzliWbcccCkd2XZdXLpYJhn9JApSWg7AVLaQHnk4rQjj9mg==}
+    engines: {node: '>=14.6'}
+    peerDependencies:
+      vue: ^3.2.41
+    dependencies:
+      '@vueuse/core': 9.7.0
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+    dev: true
 
   /w3c-hr-time/1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==}
