@@ -1,7 +1,7 @@
 {
   "name": "vue3-right-click-menu",
   "version": "0.0.5",
-  "packageManager": "pnpm@7.18.2",
+  "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264",
   "description": "vue3-right-click-menu",
   "author": "Simon He",
   "license": "MIT",
@@ -52,7 +52,7 @@
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
     "lint:fix": "pnpm run lint --fix",
     "typecheck": "vue-tsc --noEmit",
-    "test": "vitest --dir test -u",
+    "test": "vitest --run --dir test -u",
     "ptest": "pnpm run -C playground test -u",
     "preview": "pnpm run -C playground preview",
     "test:e2e": "cypress open",
