@@ -29,9 +29,10 @@ app.component('vue-right-click', RightClick)
 ## Params
 ```ts
 const menu = [
-  { label: '新增', user: 'simon' },
-  { label: '删除', user: 'simon' },
-  { label: '编辑', user: 'simon' },
+  { label: '新增', user: 'simon', shortcut: '⌘N' },
+  { label: '删除', user: 'simon', disabled: true, shortcut: 'Del' },
+  { type: 'divider' },
+  { label: '编辑', user: 'simon', shortcut: '⌘E' },
 ]
 ```
 
@@ -42,6 +43,12 @@ const menu = [
 ```
 
 >样式不满足可重写覆盖
+
+## Keyboard
+菜单打开后支持键盘操作：
+- `↑` / `↓`：选择菜单项
+- `Enter` / `Space`：确认
+- `Esc`：关闭
 
 ## License
 [MIT](./LICENSE) License © 2022 [Simon He](https://github.com/Simon-He95)

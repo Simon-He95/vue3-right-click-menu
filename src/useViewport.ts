@@ -1,13 +1,25 @@
-import { ref } from 'vue'
-const vw = ref(document.documentElement.clientWidth)
-const vh = ref(document.documentElement.clientHeight)
-export default function () {
-  window.addEventListener('resize', () => {
+import { onMounted, onUnmounted, ref } from 'vue'
+
+export default function useViewport() {
+  const vw = ref(0)
+  const vh = ref(0)
+
+  const update = () => {
+    if (typeof window === 'undefined')
+      return
     vw.value = document.documentElement.clientWidth
     vh.value = document.documentElement.clientHeight
-  })
-  return {
-    vw,
-    vh,
   }
+
+  onMounted(() => {
+    update()
+    window.addEventListener('resize', update, { passive: true })
+  })
+  onUnmounted(() => {
+    if (typeof window === 'undefined')
+      return
+    window.removeEventListener('resize', update)
+  })
+
+  return { vw, vh }
 }
