@@ -79,7 +79,7 @@
     "tsup": "^6.5.0",
     "tsx": "^3.12.1",
     "typescript": "^4.8.4",
-    "unocss": "^0.51.2",
+    "unocss": "^0.65.0",
     "vite": "^4.0.0",
     "vitest": "^0.13.1",
     "vue3-right-click-menu": "^0.0.3"
